@@ -1,0 +1,10 @@
+.container {
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr;
+}
