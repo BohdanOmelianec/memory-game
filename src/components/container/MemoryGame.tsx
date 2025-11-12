@@ -20,7 +20,7 @@ const MemoryGameContainer = () => {
     setIsModalOpen(open => !open);
   }
   
-  function restartGame() {
+  const restartGame = () => {
     toggleModalVisibility();
     setTimeout(() => {
       setSize(0);
@@ -30,11 +30,10 @@ const MemoryGameContainer = () => {
 
   return (
     <div className="container">
-      {!size ? (
-        <StartWindow setSize={setSize} />
-      ) : (
-        <Cards size={size} setIsFinished={setIsFinished} />
-      )}
+      {!size
+        ? <StartWindow setSize={setSize} />
+        : <Cards size={size} setIsFinished={setIsFinished} />
+      }
       {isModalOpen && <Modal restartGame={restartGame} />}
     </div>
   );
